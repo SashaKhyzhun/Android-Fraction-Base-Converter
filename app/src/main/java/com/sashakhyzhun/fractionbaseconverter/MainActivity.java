@@ -39,18 +39,29 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 etValue.setText("");
                 etCount.setText("");
-                tvBinary.setText("");
-                tvOctal.setText("");
-                tvDecimal.setText("");
-                tvHex.setText("");
+                tvBinary.setText("0 1");
+                tvOctal.setText("0 1 2 3 4 5 6 7");
+                tvDecimal.setText("0 1 2 3 4 5 6 7 8 9");
+                tvHex.setText("0 1 2 3 4 5 6 7 8 9 A B C D E F");
             }
         });
 
         buttonOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double number = Double.parseDouble (etValue.getText().toString());
-                int    count  = Integer.parseInt   (etCount.getText().toString());
+                double number;
+                if (!etValue.getText().toString().equals("")) {
+                    number = Double.parseDouble(etValue.getText().toString());
+                } else {
+                    number = 0;
+                }
+
+                int count;
+                if (!etCount.getText().toString().equals("")) {
+                    count = Integer.parseInt(etCount.getText().toString());
+                } else {
+                    count = 0;
+                }
 
                 tvBinary  .setText(convertToBinary  (number, count));
                 tvOctal   .setText(convertToOctal   (number, count));

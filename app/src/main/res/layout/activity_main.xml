@@ -14,7 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:ems="30"
+        android:ems="10"
+        android:maxLength="10"
         android:id="@+id/etValue"
         android:hint="Enter your value" />
 
@@ -22,127 +23,125 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/countAfterComma"
-        android:hint="A number of symbol after comma"
-        android:ems="10"
+        android:hint="how much symbols after comma?"
+        android:maxLength="2"
         android:inputType="number"
         android:layout_below="@+id/etValue" />
 
 
-    <TextView
-        android:text="Binary: "
-        android:layout_height="wrap_content"
-        android:id="@+id/tvBinary"
-        android:layout_width="75dp"
-        android:layout_marginTop="50dp"
-        android:textStyle="normal|bold"
+    <LinearLayout
+        android:id="@+id/layout_binary"
         android:layout_below="@+id/countAfterComma"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/answerBinary"
-        android:text="01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:layout_alignBaseline="@+id/tvBinary"
-        android:layout_alignBottom="@+id/tvBinary"
-        android:layout_toRightOf="@+id/tvBinary"
-        android:textStyle="normal|bold"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        <TextView
+            android:text="Binary: "
+            android:layout_height="wrap_content"
+            android:layout_width="65dp"
+            android:id="@+id/tvBinary"
+            android:textStyle="normal|bold"
+            />
 
-    <TextView
-        android:text="Octal:"
-        android:layout_width="75dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/answerBinary"
-        android:id="@+id/tvOctal"
-        android:paddingTop="5dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textStyle="normal|bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 1"
+            android:id="@+id/answerBinary"
+            android:textStyle="normal|bold"
+            />
 
-    <TextView
-        android:id="@+id/answerOctal"
-        android:text="01234567"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:layout_alignBaseline="@+id/tvOctal"
-        android:layout_alignBottom="@+id/tvOctal"
-        android:layout_toRightOf="@+id/tvOctal"
-        android:textStyle="normal|bold"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+    </LinearLayout>
 
-    <TextView
-        android:text="Decimal:"
-        android:layout_width="75dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/answerOctal"
-        android:id="@+id/tvDecimal"
-        android:paddingTop="5dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textStyle="normal|bold" />
+    <LinearLayout
+        android:id="@+id/layout_octal"
+        android:layout_below="@id/layout_binary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Octal:"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvOctal"
+            android:textStyle="normal|bold"
+            />
+
+        <TextView
+            android:id="@+id/answerOctal"
+            android:text="0 1 2 3 4 5 6 7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal|bold"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_decimal"
+        android:layout_below="@id/layout_octal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Decimal:"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvDecimal"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/answerDecimal"
+            android:text="0 1 2 3 4 5 6 7 8 9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal|bold"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_hex"
+        android:layout_below="@id/layout_decimal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Hex:"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvHex"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/answerHex"
+            android:text="0 1 2 3 4 5 6 7 9 A B C D E F"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal|bold"
+            android:textAllCaps="true"
+            />
 
 
-    <TextView
-        android:id="@+id/answerDecimal"
-        android:text="0123456789"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:layout_alignBaseline="@+id/tvDecimal"
-        android:layout_alignBottom="@+id/tvDecimal"
-        android:layout_toRightOf="@+id/tvDecimal"
-        android:textStyle="normal|bold"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+    </LinearLayout>
 
-    <TextView
-        android:text="Hex:"
-        android:layout_width="75dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvDecimal"
-        android:id="@+id/tvHex"
-        android:paddingTop="5dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textStyle="normal|bold" />
-
-    <TextView
-        android:id="@+id/answerHex"
-        android:text="012345679ABCDEF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:textStyle="normal|bold"
-        android:textAllCaps="true"
-        android:layout_alignBaseline="@+id/tvHex"
-        android:layout_alignBottom="@+id/tvHex"
-        android:layout_toRightOf="@+id/tvHex"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
 
     <Button
         android:text="Calculate"
+        android:id="@+id/buttonOk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonOk"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
     <Button
         android:text="Clear All"
+        android:id="@+id/buttonClear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/buttonClear" />
+        android:layout_alignParentStart="true" />
 
 
 
