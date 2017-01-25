@@ -63,10 +63,12 @@ public class MainActivity extends AppCompatActivity {
                     count = 0;
                 }
 
-                tvBinary  .setText(convertToBinary  (number, count));
-                tvOctal   .setText(convertToOctal   (number, count));
-                tvDecimal .setText(convertToDecimal (number, count));
-                tvHex     .setText(convertToHex     (number, count));
+                if (!etCount.getText().toString().equals("") && !etValue.getText().toString().equals("")) {
+                    tvBinary.setText(convertToBinary(number, count));
+                    tvOctal.setText(convertToOctal(number, count));
+                    tvDecimal.setText(convertToDecimal(number, count));
+                    tvHex.setText(convertToHex(number, count));
+                }
 
             }
         });
