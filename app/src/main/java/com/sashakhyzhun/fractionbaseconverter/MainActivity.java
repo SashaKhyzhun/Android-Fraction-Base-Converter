@@ -70,24 +70,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-//        int value = 228;
-
-//        String intToHex = Integer.toHexString(value);
-//        String intToBinary = Integer.toBinaryString(value);
-//        String intToOctal = Integer.toOctalString(value);
-//        String intToDecimal = String.valueOf(value);
-
-
-//        System.out.println("228 in binary  == " + intToBinary);   // 2
-//        System.out.println("228 in octal   == " + intToOctal);    // 8
-//        System.out.println("228 in decimal == " + intToDecimal);  // 10
-//        System.out.println("228 in hex     == " + intToHex);      // 16
-//        System.out.println("");
-
-//        System.out.println("base2:  convertToBinary   2.28 == " + convertToBinary  (12.3125, 60));
-//        System.out.println("base8:  convertToOctal    2.28 == " + convertToOctal   (12.3125, 60));
-//        System.out.println("base10: convertToDecimal  2.28 == " + convertToDecimal (12.3125, 60));
-//        System.out.println("base16: convertToHex      2.28 == " + convertToHex     (12.3125, 60));
 
     }
 

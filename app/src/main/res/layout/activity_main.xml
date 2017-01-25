@@ -5,8 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.sashakhyzhun.fractionbaseconverter.MainActivity">
 
@@ -14,29 +12,40 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:ems="10"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
         android:maxLength="10"
         android:id="@+id/etValue"
-        android:hint="Enter your value" />
+        android:hint="Enter your value"
+        android:textColorLink="@color/colorPrimaryDark" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/countAfterComma"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
         android:hint="how much symbols after comma?"
         android:maxLength="2"
         android:inputType="number"
-        android:layout_below="@+id/etValue" />
+        android:layout_below="@+id/etValue"
+        android:textColorLink="?attr/actionModeSplitBackground" />
 
 
     <LinearLayout
         android:id="@+id/layout_binary"
         android:layout_below="@+id/countAfterComma"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:paddingTop="@dimen/activity_margin_4dp"
+        android:paddingBottom="@dimen/activity_margin_4dp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin" >
 
         <TextView
             android:text="Binary: "
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:layout_width="65dp"
             android:id="@+id/tvBinary"
@@ -47,6 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0 1"
+            android:textColor="@color/white"
             android:id="@+id/answerBinary"
             android:textStyle="normal|bold"
             />
@@ -57,19 +67,26 @@
         android:id="@+id/layout_octal"
         android:layout_below="@id/layout_binary"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:paddingTop="@dimen/activity_margin_4dp"
+        android:paddingBottom="@dimen/activity_margin_4dp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin" >
 
         <TextView
             android:text="Octal:"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:id="@+id/tvOctal"
+            android:textColor="@color/white"
             android:textStyle="normal|bold"
             />
 
         <TextView
             android:id="@+id/answerOctal"
             android:text="0 1 2 3 4 5 6 7"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="normal|bold"
@@ -79,6 +96,11 @@
     <LinearLayout
         android:id="@+id/layout_decimal"
         android:layout_below="@id/layout_octal"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_margin_4dp"
+        android:paddingBottom="@dimen/activity_margin_4dp"
+        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -86,12 +108,14 @@
             android:text="Decimal:"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:id="@+id/tvDecimal"
             android:textStyle="normal|bold" />
 
         <TextView
             android:id="@+id/answerDecimal"
             android:text="0 1 2 3 4 5 6 7 8 9"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="normal|bold"
@@ -103,18 +127,25 @@
         android:id="@+id/layout_hex"
         android:layout_below="@id/layout_decimal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:paddingTop="@dimen/activity_margin_4dp"
+        android:paddingBottom="@dimen/activity_margin_4dp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin" >
 
         <TextView
             android:text="Hex:"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:id="@+id/tvHex"
             android:textStyle="normal|bold" />
 
         <TextView
             android:id="@+id/answerHex"
             android:text="0 1 2 3 4 5 6 7 9 A B C D E F"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="normal|bold"
@@ -132,7 +163,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp" />
 
     <Button
         android:text="Clear All"
@@ -141,8 +174,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp" />
 
 
 </RelativeLayout>
