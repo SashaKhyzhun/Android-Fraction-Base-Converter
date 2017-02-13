@@ -39,44 +39,39 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 etValue.setText("");
                 etCount.setText("");
-                tvBinary.setText("");
-                tvOctal.setText("");
-                tvDecimal.setText("");
-                tvHex.setText("");
+                tvBinary.setText("0 1");
+                tvOctal.setText("0 1 2 3 4 5 6 7");
+                tvDecimal.setText("0 1 2 3 4 5 6 7 8 9");
+                tvHex.setText("0 1 2 3 4 5 6 7 8 9 A B C D E F");
             }
         });
 
         buttonOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double number = Double.parseDouble (etValue.getText().toString());
-                int    count  = Integer.parseInt   (etCount.getText().toString());
+                double number;
+                if (!etValue.getText().toString().equals("")) {
+                    number = Double.parseDouble(etValue.getText().toString());
+                } else {
+                    number = 0;
+                }
 
-                tvBinary  .setText(convertToBinary  (number, count));
-                tvOctal   .setText(convertToOctal   (number, count));
-                tvDecimal .setText(convertToDecimal (number, count));
-                tvHex     .setText(convertToHex     (number, count));
+                int count;
+                if (!etCount.getText().toString().equals("")) {
+                    count = Integer.parseInt(etCount.getText().toString());
+                } else {
+                    count = 0;
+                }
+
+                if (!etCount.getText().toString().equals("") && !etValue.getText().toString().equals("")) {
+                    tvBinary.setText(convertToBinary(number, count));
+                    tvOctal.setText(convertToOctal(number, count));
+                    tvDecimal.setText(convertToDecimal(number, count));
+                    tvHex.setText(convertToHex(number, count));
+                }
 
             }
         });
-//        int value = 228;
-
-//        String intToHex = Integer.toHexString(value);
-//        String intToBinary = Integer.toBinaryString(value);
-//        String intToOctal = Integer.toOctalString(value);
-//        String intToDecimal = String.valueOf(value);
-
-
-//        System.out.println("228 in binary  == " + intToBinary);   // 2
-//        System.out.println("228 in octal   == " + intToOctal);    // 8
-//        System.out.println("228 in decimal == " + intToDecimal);  // 10
-//        System.out.println("228 in hex     == " + intToHex);      // 16
-//        System.out.println("");
-
-//        System.out.println("base2:  convertToBinary   2.28 == " + convertToBinary  (12.3125, 60));
-//        System.out.println("base8:  convertToOctal    2.28 == " + convertToOctal   (12.3125, 60));
-//        System.out.println("base10: convertToDecimal  2.28 == " + convertToDecimal (12.3125, 60));
-//        System.out.println("base16: convertToHex      2.28 == " + convertToHex     (12.3125, 60));
 
     }
 
